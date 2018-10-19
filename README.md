@@ -6,4 +6,5 @@
 
 # Convert XML to YAML file
 #xml2yaml --schema pets_det.xsd --xml PETS2009-S2L1-c1-det.xml -o PETS2009-S2L1-c1-det.yml
+
 #sed -i "1i%YAML:1.0" a 
