@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="box">
+    <xs:complexType>
+        <xs:attribute name="h" type="xs:string" />
+        <xs:attribute name="w" type="xs:string" />
+        <xs:attribute name="xc" type="xs:string" />
+        <xs:attribute name="yc" type="xs:string" />
+    </xs:complexType>
+   </xs:element>
+
+  <xs:element name="object">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="box" minOccurs="1"   maxOccurs="1" />
+      </xs:all>
+      <xs:attribute name="id" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="objectlist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="object" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="frame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="objectlist" maxOccurs="1" />
+      </xs:sequence>
+      <xs:attribute name="number" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="dataset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="frame"  maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
+
